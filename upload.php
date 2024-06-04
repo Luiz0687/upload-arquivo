@@ -30,7 +30,7 @@ if (getimagesize($_FILES['arquivo']['tmp_name']) === false ){
 }
 //se tudo der certo até aqui, faz o upload
 $fezUpload = move_uploaded_file($_FILES['arquivo']['tmp_name'], 
-$pastaDestino . $_FILES['arquivo']['name']);
+ __DIR__ . $pastaDestino . $_FILES['arquivo']['name']);
     if ($fezUpload == true){
         header("location:index.php");
     } else {
