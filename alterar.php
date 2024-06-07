@@ -15,7 +15,9 @@ $nome_arquivo = $_GET['nome_arquivo'];
         <input type = "file" name = "arquivo"><br>
         <input type = "submit" value = "enviar">
 </form>
+
 </body>
+
 
 </html>
 

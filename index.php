@@ -23,7 +23,7 @@ if ($resultado != false){
         selecione o arquivo:
         <input type = "file" name = "arquivo"><br>
         <input type = "submit" value = "enviar">
-        <table>
+        <table border="1px">
             <thead>
             <tr>
                 <th>nome do arquivo</th>
@@ -33,13 +33,31 @@ if ($resultado != false){
         <tbody>
             <?php
             foreach ($arquivos as $arquivo) {
-             echo "<tr><td>".$arquivo ['nome_arquivo'] . "</td>";
-             echo "<td><a href='alterar.php?nome_arquivo=" . 
-            $arquivo['nome_arquivo']."'>alterar</td>";
-            echo "<td><button>excluir</button></td></tr>";
+                $arq = $arquivo['nome_arquivo'];
+            echo "<tr>"; //Inciar a linha
+            echo "<td> $arq </td>";//primeira coluna com o nome do arquivo
+            echo "<td>"; //inicia a segunda coluna 
+            echo "<a "; //abriu o link
+            echo "href='alterar.php?nome_arquivo=$arq'>";
+            echo "alterar</td>";//Imprimiu o texto da teg a
+            echo "</a>";//Fcehou o link
+            echo "</td>";//fechei a segunda coluna
+            echo "<td>"; //abriu a terceira coluna
+            echo "<button ";//abriu o botão
+            echo "onclick=";//criou o atributo onclick
+            echo "'excluir(\"$arq\")'>";//chamamos a funcao excluir 
+            echo "excluir";//mostra o texto botao
+            echo "</button>";//fechar o botão
+            echo"</td>";//fechar a terceira coluna
+            echo "</tr>";//fechar a linha
             }
          ?>
         </tbody>
         </table>
+        <script>
+            function excluir(nome_arquivo){
+                confirm("Você tem certeza que deseja excluir o arquivo " + nome_arquivo + "?");
+            }
+            </script>
 </body>
 </html>
