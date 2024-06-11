@@ -33,7 +33,7 @@ $nomeArquivo = uniqid();
 
 //se tudo der certo até aqui, faz o upload
 $fezUpload = move_uploaded_file($_FILES['arquivo']['tmp_name'], 
- __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao);
+ __DIR__ . $pastaDestino . $nomeArquivo.".".$extensao);
     if ($fezUpload == true){
         $conexao = mysqli_connect("localhost", "root","","upload-arquivo");
         $sql = "INSERT INTO arquivo (nome_arquivo) VALUES ('$nomeArquivo.$extensao')";

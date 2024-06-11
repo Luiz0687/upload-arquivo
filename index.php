@@ -23,6 +23,7 @@ if ($resultado != false){
         selecione o arquivo:
         <input type = "file" name = "arquivo"><br>
         <input type = "submit" value = "enviar">
+</form>
         <table border="1px">
             <thead>
             <tr>
@@ -56,7 +57,11 @@ if ($resultado != false){
         </table>
         <script>
             function excluir(nome_arquivo){
-                confirm("Você tem certeza que deseja excluir o arquivo " + nome_arquivo + "?");
+                let deletar = confirm("Você tem certeza que deseja excluir o arquivo " + nome_arquivo + "?");
+                 if (deletar == true){
+                    window.location.href = "deletar.php?nome_arquivo="+ nome_arquivo;
+                 }
+
             }
             </script>
 </body>
