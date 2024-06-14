@@ -24,11 +24,12 @@ if ($resultado != false){
         <input type = "file" name = "arquivo"><br>
         <input type = "submit" value = "enviar">
 </form>
-        <table border="1px">
+        <table border="3px">
             <thead>
             <tr>
-                <th>nome do arquivo</th>
-                <th colspan="2"> opções</th>
+                <th>Imagem do arquivo</th>
+                <th colspan="2"> Arquivos</th>
+                <th colspan="2"> Opções</th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +37,8 @@ if ($resultado != false){
             foreach ($arquivos as $arquivo) {
                 $arq = $arquivo['nome_arquivo'];
             echo "<tr>"; //Inciar a linha
-            echo "<td> $arq </td>";//primeira coluna com o nome do arquivo
+            echo"<td><img src='uploads/$arq' width='150px' height='100px'></td>";
+            echo "<td><a href='uploads/$arq'>$arq</a></td>";//primeira coluna com o nome do arquivo
             echo "<td>"; //inicia a segunda coluna 
             echo "<a "; //abriu o link
             echo "href='alterar.php?nome_arquivo=$arq'>";
